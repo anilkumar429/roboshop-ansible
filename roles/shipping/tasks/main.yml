@@ -17,10 +17,10 @@
 #- name: Load master-data
 #  ansible.builtin.shell: mysql -h mysql-dev.apps11.shop -uroot -pRoboShop@1 < /app/db/master-data.sql
 
-- name: Load to DB master-data app-user Schema
+- name: Load to DB
   ansible.builtin.shell: mysql -h mysql-dev.apps11.shop -uroot -pRoboShop@1 < /app/db/{{ item }}.sql
   loop:
-    - Schema
+    - schema
     - app-user
     - master-data
 
